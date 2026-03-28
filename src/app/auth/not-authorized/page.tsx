@@ -7,7 +7,6 @@ const NotAuthorizedPage = () => {
     const router = useRouter();
     const [countdown, setCountdown] = useState<number>(30);
 
-    // ✅ Countdown timer that updates every second
     useEffect(() => {
         const interval = setInterval(() => {
             setCountdown(prev => {
@@ -18,17 +17,15 @@ const NotAuthorizedPage = () => {
                 }
                 return prev - 1;
             });
-        }, 10000);
+        }, 1000);
 
         return () => clearInterval(interval);
     }, []);
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-blue-400 px-4">
-            {/* ✅ Landscape container - side by side */}
             <div className="bg-white rounded-2xl shadow-xl flex flex-row overflow-hidden w-full max-w-2xl">
 
-                {/* Left side - Picture */}
                 <div className="w-1/2 bg-blue-100 flex items-center justify-center">
                     <img
                         src="/images/ketika Bpk prabowo sadar telah dicurangi 2 periode oleh ijazah palsu.jpg"
